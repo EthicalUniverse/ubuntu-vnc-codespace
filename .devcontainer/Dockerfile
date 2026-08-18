@@ -23,3 +23,5 @@ RUN chmod 700 /root/.vnc
 RUN echo "vncpasswd123" | vncpasswd -f > /root/.vnc/passwd
 
 RUN chmod 600 /root/.vnc/passwd
+
+USER root
