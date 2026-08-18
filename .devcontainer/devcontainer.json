@@ -1,0 +1,15 @@
+{
+  "name": "Ubuntu VNC Setup",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "forwardPorts": [6080],
+  "portsAttributes": {
+    "6080": {
+      "label": "noVNC Browser Access",
+      "onAutoForward": "notify"
+    }
+  },
+  "postStartCommand": "bash /root/.devcontainer/start-vnc.sh",
+  "remoteUser": "root"
+}
