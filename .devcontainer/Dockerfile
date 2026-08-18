@@ -18,6 +18,8 @@ RUN mkdir -p /root/.vnc
 
 RUN echo "123456" | vncpasswd -f > /root/.vnc/passwd && chmod 600 /root/.vnc/passwd
 
-EXPOSE 5901 6080
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
 
-CMD ["/bin/bash"]
+EXPOSE 5901 6080
