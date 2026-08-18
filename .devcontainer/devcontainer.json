@@ -1,0 +1,14 @@
+{
+  "name": "Ubuntu VNC",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "forwardPorts": [6080, 5901],
+  "portsAttributes": {
+    "6080": {
+      "label": "VNC Web",
+      "onAutoForward": "notify"
+    }
+  },
+  "remoteUser": "root"
+}
